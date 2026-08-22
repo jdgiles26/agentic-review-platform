@@ -1,0 +1,22 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - CORS_ORIGINS=*
+    restart: unless-stopped
+
+  # Optional: run the Next.js UI (requires node image + build)
+  # ui:
+  #   image: node:20-alpine
+  #   working_dir: /app
+  #   volumes:
+  #     - ./ui:/app
+  #   command: sh -c "npm install && npm run dev"
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - NEXT_PUBLIC_API_URL=http://localhost:8000
