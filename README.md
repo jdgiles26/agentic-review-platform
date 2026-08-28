@@ -6,7 +6,7 @@ Exposes:
 
 | Surface | How to use |
 |---------|------------|
-| **Website / Dashboard** | Next.js UI at `ui/` – paste a diff, see findings |
+| **Website / Dashboard** | Next.js UI at `ui/` – paste a diff *or* review a live GitHub PR |
 | **HTTP API** | FastAPI – `POST /v1/review`, GitHub PR endpoint, webhooks |
 | **CLI** | `review diff file.patch` or `review pr owner repo number` |
 | **GitHub automation** | Webhook receiver + optional comment/label actions |
@@ -57,6 +57,12 @@ npm install
 NEXT_PUBLIC_API_URL=http://localhost:8000 npm run dev
 # → http://localhost:3000
 ```
+
+The console:
+
+- shows live `/health` status in the header
+- accepts a pasted unified diff **or** owner / repo / PR number
+- groups findings by severity and lets you filter them
 
 ### 4. Docker
 
